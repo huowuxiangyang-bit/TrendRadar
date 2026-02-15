@@ -53,7 +53,7 @@ schedule:
 #   - name: 显示名称（可自定义，修改后不影响运行）
 # ===============================================================
 platforms:
-  enabled: true                         # 是否启用热榜平台抓取
+  enabled: false                         # 是否启用热榜平台抓取
   sources:
     - id: "wallstreetcn-hot"
       name: "华尔街见闻"
@@ -95,28 +95,20 @@ rss:
   # - 正整数：覆盖全局设置，只推送此天数内的文章
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
-    - id: "hacker-news"
-      name: "Hacker News"
-      url: "https://hnrss.org/frontpage"
-
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false
-
-    - id: "TheInformation"
-      name: "美股科技深喉"
-      url: "https://www.theinformation.com/feed"
-      max_age_days: 3
-
     - id: "muyuan"
       name: "牧原"
       url: "https://www.bing.com/news/search?q=牧原&format=RSS"
       max_age_days: 3
+
+    - id: "zhurou"
+      name: "猪肉"
+      url: "https://www.bing.com/news/search?q=猪肉&format=RSS"
+      max_age_days: 3
+
+
+
+
+
 
 
 
@@ -190,13 +182,13 @@ display:
     - ai_analysis                       # 5️⃣ AI 分析区域
   regions:
     new_items: false # 新增热点区域（含热榜新增 + RSS 新增）
-    hotlist: true # 热榜区域（关键词匹配的热点新闻）
+    hotlist: false # 热榜区域（关键词匹配的热点新闻）
     rss: true # RSS 订阅区域
     standalone: false # 独立展示区（完整热榜/RSS，不受关键词过滤）
     ai_analysis: false # AI 分析区域
   standalone:
-    platforms: ["wallstreetcn-hot","cls-hot","weibo"] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: ["muyuan"] # RSS 源 ID 列表（如 ["hacker-news"]）
+    platforms: ["weibo"] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    rss_feeds: ["muyuan","zhurou"] # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                     # 每个源最多展示条数（0=不限制）
 
 
