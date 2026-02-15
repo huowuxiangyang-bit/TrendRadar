@@ -97,13 +97,10 @@ rss:
   feeds:
     - id: "muyuan"
       name: "牧原"
-      url: "https://www.bing.com/search?q=牧原股份&format=rss"
+      url: "https://news.baidu.com/news?tn=newsrss&word=牧原股份&rn=100"
       max_age_days: 3
 
-    - id: "zhurou"
-      name: "猪肉"
-      url: "https://www.bing.com/news/search?q=猪肉&format=RSS"
-      max_age_days: 3
+
 
 
 
