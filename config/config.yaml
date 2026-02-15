@@ -84,7 +84,7 @@ rss:
   #    - 所有文章都会存入数据库（MCP Server 的 AI 查询仍可访问）
   #    - 只有新鲜的文章会被推送到通知渠道
   freshness_filter:
-    enabled: true                     # 是否启用新鲜度过滤（默认启用）
+    enabled: false                     # 是否启用新鲜度过滤（默认启用）
 
     max_age_days: 3                   # 最大文章年龄（天）
                                       # - 正整数：只推送 N 天内的文章
@@ -97,13 +97,14 @@ rss:
   feeds:
     - id: "muyuan"
       name: "牧原"
-      url: "https://www.bing.com/news/search?q=牧原&format=RSS"
+      url: "https://www.bing.com/search?q=牧原股份&format=rss"
       max_age_days: 3
 
     - id: "zhurou"
       name: "猪肉"
       url: "https://www.bing.com/news/search?q=猪肉&format=RSS"
       max_age_days: 3
+
 
 
 
