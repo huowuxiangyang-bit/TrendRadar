@@ -102,7 +102,7 @@ rss:
   #    - 所有文章都会存入数据库（MCP Server 的 AI 查询仍可访问）
   #    - 只有新鲜的文章会被推送到通知渠道
   freshness_filter:
-    enabled: false                     # 是否启用新鲜度过滤（默认启用）
+    enabled: true                     # 是否启用新鲜度过滤（默认启用）
 
     max_age_days: 3                   # 最大文章年龄（天）
                                       # - 正整数：只推送 N 天内的文章
@@ -155,7 +155,7 @@ rss:
 #    • 适用场景：避免重复信息干扰
 # ===============================================================
 report:
-  mode: "daily"                     # 可选: daily | current | incremental
+  mode: "current"                     # 可选: daily | current | incremental
                                       # ⚠️ 开启调度系统后，此值会被当前时间段的 report_mode 覆盖
 
 
@@ -197,13 +197,13 @@ display:
     - standalone                       # 4️⃣ 独立展示区
     - ai_analysis                       # 5️⃣ AI 分析区域
   regions:
-    new_items: false # 新增热点区域（含热榜新增 + RSS 新增）
-    hotlist: true # 热榜区域（关键词匹配的热点新闻）
-    rss: false # RSS 订阅区域
+    new_items: true # 新增热点区域（含热榜新增 + RSS 新增）
+    hotlist: false # 热榜区域（关键词匹配的热点新闻）
+    rss: true # RSS 订阅区域
     standalone: false # 独立展示区（完整热榜/RSS，不受关键词过滤）
-    ai_analysis: false # AI 分析区域
+    ai_analysis: true # AI 分析区域
   standalone:
-    platforms: [] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    platforms: ["zhihu", "wallstreetcn-hot"]     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
     rss_feeds: []                     # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                     # 每个源最多展示条数（0=不限制）
 
